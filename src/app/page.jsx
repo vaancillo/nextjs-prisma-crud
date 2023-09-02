@@ -11,6 +11,9 @@ async function loadTask () {
   return await prisma.task.findMany()
 }
 
+// export const revalidate = 0;
+export const dynamic = 'force-dynamic';
+
 async function HomePage () {
   const task = await loadTask()
   console.log(task)
